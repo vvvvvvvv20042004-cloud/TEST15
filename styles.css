@@ -132,13 +132,13 @@ img{display:block;max-width:100%}
 .dep-head{max-width:60ch;margin-bottom:54px}
 .dep-head p{color:var(--muted);font-size:16px;margin-top:20px;line-height:1.8}
 .dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.dep{background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--stroke);border-radius:3px;padding:40px 32px;transition:.4s;cursor:pointer;min-height:380px;display:flex;flex-direction:column}
+.dep{background:var(--panel);backdrop-filter:blur(10px);border:1px solid var(--stroke);border-radius:3px;padding:40px 32px;transition:.4s;cursor:pointer;min-height:220px;display:flex;flex-direction:column;justify-content:center;text-align:center}
 .dep:hover{border-color:var(--stroke-strong);background:rgba(120,122,128,.26);transform:translateY(-4px)}
-.dep .idx{font-size:12px;letter-spacing:.2em;color:var(--accent);opacity:.8;height:16px}
-.dep .badge{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--stroke-strong);border-radius:40px;padding:5px 13px;margin-top:18px;margin-bottom:20px;align-self:flex-start}
-.dep h3{font-size:30px;font-weight:200;color:#fff;line-height:1.05;min-height:38px}
-.dep .sci{font-size:12.5px;color:var(--faint);margin-top:8px;min-height:34px}
-.dep p{font-size:14px;color:var(--muted);line-height:1.7;margin-top:18px;flex:1}
+.dep .idx{font-size:12px;letter-spacing:.2em;color:var(--accent);opacity:.8}
+.dep .badge{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--stroke-strong);border-radius:40px;padding:5px 13px;margin-top:18px;margin-bottom:20px}
+.dep h3{font-size:30px;font-weight:200;color:#fff;line-height:1.05;margin-top:10px}
+.dep .sci{font-size:12.5px;color:var(--faint);margin-top:8px}
+.dep p{font-size:14px;color:var(--muted);line-height:1.7;margin-top:18px}
 @media(max-width:860px){.dep-grid{grid-template-columns:1fr}.dep{min-height:auto}}
 
 /* products — clean panel grid */
@@ -375,6 +375,7 @@ a.blog-card{text-decoration:none;color:inherit}
 
 /* dep card as link */
 a.dep{text-decoration:none;color:inherit;display:flex}
+a.prod{text-decoration:none;color:inherit}
 .dep-detail{scroll-margin-top:100px}
 
 /* ===== consent checkbox + tooltip ===== */
