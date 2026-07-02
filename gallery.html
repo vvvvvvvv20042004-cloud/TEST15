@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Диплом Некрополь 2019 | ТРОИЦА</title>
-<meta name="description" content="Диплом международной выставки Некрополь — TANEXPO World Russia 2019, Москва. Участник — ООО Троица, Петрозаводск.">
+<title>Галерея | ТРОИЦА</title>
+<meta name="description" content="Фотогалерея ООО «Троица»: карьеры, погрузка и производство памятников из габбро-диабаза. Петрозаводск.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -51,32 +51,39 @@
   </nav>
 </header>
 
-
 <section class="page-hero">
   <div class="wrap">
-    <div class="crumbs"><a href="index.html">Главная</a> / <a href="docs.html">Документы</a> / <span>Некрополь 2019</span></div>
-    <h1>Диплом выставки <span class="ac">Некрополь 2019</span></h1>
+    <div class="crumbs"><a href="index.html">Главная</a> / <span>Галерея</span></div>
+    <h1>Карьер, погрузка <span class="ac">и производство</span></h1>
+    <p>Как это выглядит вживую — фотографии с карьеров и территории производства.</p>
   </div>
 </section>
+
 <section class="content">
   <div class="wrap">
-    <div class="doc-detail">
-      <div class="doc-visual"><img src="diploma-2019.jpg" alt="Диплом Некрополь TANEXPO World Russia 2019"></div>
-      <div class="doc-detail-body">
-        <div class="eyebrow"><span class="d"></span><span>Диплом · 2019</span></div>
-        <h2 class="h2">Некрополь — TANEXPO World Russia</h2>
-        <p>Диплом за участие в международной выставке похоронных принадлежностей, ритуального сервиса, мемориального искусства и архитектуры «Некрополь — TANEXPO World Russia 2019», прошедшей в Москве.</p>
-        <p>ООО «Троица» (Петрозаводск) представила продукцию из карельского габбро-диабаза перед профессиональным сообществом отрасли.</p>
-        <div class="doc-meta">
-          <div class="row"><div class="k">Год</div><div class="v">2019</div></div>
-          <div class="row"><div class="k">Город</div><div class="v">Москва</div></div>
-          <div class="row"><div class="k">Организатор</div><div class="v">«Некрополь»</div></div>
-          <div class="row"><div class="k">Участник</div><div class="v">Троица ООО, Петрозаводск</div></div>
+    <div class="gallery-carousel reveal">
+      <div class="gallery-track">
+        <div class="gallery-slide"><img src="gallery-1.jpg" alt="Карьер зимой, погрузочный кран"></div>
+        <div class="gallery-slide"><img src="gallery-2.jpg" alt="Погрузка продукции в грузовой транспорт"></div>
+        <div class="gallery-slide"><img src="gallery-3.jpg" alt="Погрузка продукции в фуру"></div>
+        <div class="gallery-slide"><img src="gallery-4.jpg" alt="Готовая продукция на территории"></div>
+        <div class="gallery-slide"><img src="gallery-5.jpg" alt="Продукция в грузовом прицепе"></div>
+        <div class="gallery-slide"><img src="gallery-6.jpg" alt="Погрузка на грузовой автомобиль"></div>
+        <div class="gallery-slide"><img src="gallery-7.jpg" alt="Распиловочный станок в цеху"></div>
+        <div class="gallery-slide"><img src="gallery-8.jpg" alt="Территория производства, готовая продукция"></div>
+        <div class="gallery-slide"><img src="gallery-9.jpg" alt="Полированная плита габбро-диабаза"></div>
+      </div>
+      <div class="gallery-nav">
+        <div class="gallery-dots"></div>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow gallery-prev" aria-label="Предыдущее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="gallery-arrow gallery-next" aria-label="Следующее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <div class="foot-mega"><div class="word">ТРОИЦА</div></div>
 <footer id="footer">
   <div class="wrap">
@@ -98,6 +105,7 @@
 <button class="to-top" id="toTop" aria-label="Наверх">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
+
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-text">Мы используем файлы cookie для улучшения работы сайта и анализа посещаемости. Продолжая пользоваться сайтом, вы соглашаетесь с этим. <a href="#" onclick="event.preventDefault();document.querySelector('.consent-star')?.click()">Подробнее</a></div>
   <div class="cookie-actions">
@@ -118,15 +126,34 @@ if(toTop)toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}))
 const burger=document.querySelector('.burger');const mm=document.getElementById('mobileMenu');
 if(burger){burger.addEventListener('click',()=>{burger.classList.toggle('open');mm.classList.toggle('show')});
   mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('open');mm.classList.remove('show')}));}
-function countUp(el){const to=+el.dataset.to;const cnt=el.querySelector('.cnt');const dur=1500;const t0=performance.now();
-  function tick(t){const p=Math.min((t-t0)/dur,1);const e=1-Math.pow(1-p,3);
-    cnt.textContent=Math.round(to*e);if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);}
-const so=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting&&e.target.dataset.to){countUp(e.target);so.unobserve(e.target)}})},{threshold:.6});
-document.querySelectorAll('.num[data-to]').forEach(n=>so.observe(n));
 
 function acceptCookies(){localStorage.setItem('troitsa_cookies','accepted');document.getElementById('cookieBanner').classList.remove('show');}
 function declineCookies(){localStorage.setItem('troitsa_cookies','declined');document.getElementById('cookieBanner').classList.remove('show');}
 if(!localStorage.getItem('troitsa_cookies')){setTimeout(()=>{const cb=document.getElementById('cookieBanner');if(cb)cb.classList.add('show');},800);}
+
+document.querySelectorAll('.gallery-carousel').forEach(car=>{
+  const track=car.querySelector('.gallery-track');
+  const slides=[...track.children];
+  const dotsWrap=car.querySelector('.gallery-dots');
+  const step=()=>slides[0].getBoundingClientRect().width+20;
+  slides.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='gallery-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Слайд '+(i+1));
+    d.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(d);
+  });
+  const dots=[...dotsWrap.children];
+  function current(){return Math.round(track.scrollLeft/step())}
+  function goTo(i){track.scrollTo({left:i*step(),behavior:'smooth'})}
+  function markActive(){const idx=current();dots.forEach((d,i)=>d.classList.toggle('active',i===idx))}
+  car.querySelector('.gallery-prev')?.addEventListener('click',()=>goTo(Math.max(current()-1,0)));
+  car.querySelector('.gallery-next')?.addEventListener('click',()=>goTo(Math.min(current()+1,slides.length-1)));
+  track.addEventListener('scroll',()=>{clearTimeout(track._t);track._t=setTimeout(markActive,90)});
+  let timer=setInterval(()=>goTo((current()+1)%slides.length),4200);
+  car.addEventListener('mouseenter',()=>clearInterval(timer));
+  car.addEventListener('mouseleave',()=>{timer=setInterval(()=>goTo((current()+1)%slides.length),4200)});
+});
 </script>
 </body>
 </html>

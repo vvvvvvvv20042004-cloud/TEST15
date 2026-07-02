@@ -21,6 +21,7 @@
     <nav class="menu">
       <a href="deposits.html">Месторождения</a>
       <a href="products.html">Продукция</a>
+      <a href="gallery.html">Галерея</a>
       <a href="docs.html">Документы</a>
       <a href="blog.html">Блог</a>
       <a href="contacts.html">Контакты</a>
@@ -43,6 +44,7 @@
   <nav class="mobile-menu" id="mobileMenu">
     <a href="deposits.html">Месторождения</a>
     <a href="products.html">Продукция</a>
+    <a href="gallery.html">Галерея</a>
     <a href="docs.html">Документы</a>
     <a href="blog.html">Блог</a>
     <a href="contacts.html">Контакты</a>
@@ -164,6 +166,35 @@
   </div>
 </section>
 
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow"><span class="d"></span><span>Галерея</span></div>
+      <h2 class="h2">Карьер, погрузка <span class="ac">и производство</span></h2>
+    </div>
+    <div class="gallery-carousel reveal" style="margin-top:44px">
+      <div class="gallery-track">
+        <div class="gallery-slide"><img src="gallery-1.jpg" alt="Карьер зимой, погрузочный кран"></div>
+        <div class="gallery-slide"><img src="gallery-2.jpg" alt="Погрузка продукции в грузовой транспорт"></div>
+        <div class="gallery-slide"><img src="gallery-3.jpg" alt="Погрузка продукции в фуру"></div>
+        <div class="gallery-slide"><img src="gallery-4.jpg" alt="Готовая продукция на территории"></div>
+        <div class="gallery-slide"><img src="gallery-5.jpg" alt="Продукция в грузовом прицепе"></div>
+        <div class="gallery-slide"><img src="gallery-6.jpg" alt="Погрузка на грузовой автомобиль"></div>
+        <div class="gallery-slide"><img src="gallery-7.jpg" alt="Распиловочный станок в цеху"></div>
+        <div class="gallery-slide"><img src="gallery-8.jpg" alt="Территория производства, готовая продукция"></div>
+        <div class="gallery-slide"><img src="gallery-9.jpg" alt="Полированная плита габбро-диабаза"></div>
+      </div>
+      <div class="gallery-nav">
+        <div class="gallery-dots"></div>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow gallery-prev" aria-label="Предыдущее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="gallery-arrow gallery-next" aria-label="Следующее фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="req-section" id="requisites">
   <div class="wrap">
     <div class="eyebrow"><span class="d"></span><span>Реквизиты</span></div>
@@ -190,7 +221,7 @@
         <img src="logo-plate.png" alt="ТРОИЦА">
         <p>Изделия из габбро-диабаза. Свои карьеры. Своё производство.</p>
       </div>
-      <div><h5>Навигация</h5><a href="deposits.html">Месторождения</a><a href="products.html">Продукция</a><a href="docs.html">Документы</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a></div>
+      <div><h5>Навигация</h5><a href="deposits.html">Месторождения</a><a href="products.html">Продукция</a><a href="gallery.html">Галерея</a><a href="docs.html">Документы</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a></div>
       <div><h5>Контакты</h5><a href="tel:+79214692270">8 921 469-22-70</a><a href="tel:+79215212199">8 921 521-21-99</a><a href="mailto:ooo.troicza@bk.ru">ooo.troicza@bk.ru</a><a href="mailto:karhy82@mail.ru">karhy82@mail.ru</a><a href="https://vk.com/granit10region" target="_blank" rel="noopener">ВКонтакте</a><p style="margin-top:8px">г. Петрозаводск, ул. Дружбы, 3А</p></div>
       <div><h5>Карьеры</h5><p>Кирилловское</p><p>Маварское</p></div>
     </div>
@@ -234,6 +265,30 @@ document.querySelectorAll('.num[data-to]').forEach(n=>so.observe(n));
 function acceptCookies(){localStorage.setItem('troitsa_cookies','accepted');document.getElementById('cookieBanner').classList.remove('show');}
 function declineCookies(){localStorage.setItem('troitsa_cookies','declined');document.getElementById('cookieBanner').classList.remove('show');}
 if(!localStorage.getItem('troitsa_cookies')){setTimeout(()=>{const cb=document.getElementById('cookieBanner');if(cb)cb.classList.add('show');},800);}
+
+document.querySelectorAll('.gallery-carousel').forEach(car=>{
+  const track=car.querySelector('.gallery-track');
+  const slides=[...track.children];
+  const dotsWrap=car.querySelector('.gallery-dots');
+  const step=()=>slides[0].getBoundingClientRect().width+20;
+  slides.forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='gallery-dot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Слайд '+(i+1));
+    d.addEventListener('click',()=>goTo(i));
+    dotsWrap.appendChild(d);
+  });
+  const dots=[...dotsWrap.children];
+  function current(){return Math.round(track.scrollLeft/step())}
+  function goTo(i){track.scrollTo({left:i*step(),behavior:'smooth'})}
+  function markActive(){const idx=current();dots.forEach((d,i)=>d.classList.toggle('active',i===idx))}
+  car.querySelector('.gallery-prev')?.addEventListener('click',()=>goTo(Math.max(current()-1,0)));
+  car.querySelector('.gallery-next')?.addEventListener('click',()=>goTo(Math.min(current()+1,slides.length-1)));
+  track.addEventListener('scroll',()=>{clearTimeout(track._t);track._t=setTimeout(markActive,90)});
+  let timer=setInterval(()=>goTo((current()+1)%slides.length),4200);
+  car.addEventListener('mouseenter',()=>clearInterval(timer));
+  car.addEventListener('mouseleave',()=>{timer=setInterval(()=>goTo((current()+1)%slides.length),4200)});
+});
 </script>
 </body>
 </html>
