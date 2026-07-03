@@ -150,7 +150,7 @@ img{display:block;max-width:100%}
 .prod .n{font-size:12px;letter-spacing:.16em;color:var(--accent);opacity:.8;height:14px}
 .prod h4{font-size:24px;font-weight:200;color:#fff;margin-top:18px;margin-bottom:0;line-height:1.15;min-height:30px}
 .prod p{font-size:13.5px;color:var(--muted);margin-top:10px;line-height:1.65;flex:1}
-@media(max-width:860px){.prod.big,.prod.sm{grid-column:span 12}}
+@media(max-width:860px){.prod.big,.prod.sm{grid-column:span 12!important}}
 
 /* process */
 .proc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:54px}
